@@ -124,6 +124,9 @@ header nav ul li:hover::after{
     background-size: cover;
     background-position:center;
 }
+#carousel .carousel-inner.row{
+    margin-left: 0!important;
+}
 #carousel .carousel-inner .carousel-item.item__1{
     background-image: url("../image/hero-1.jpg");
     height: 800px;   
