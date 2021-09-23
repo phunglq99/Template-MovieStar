@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>slick</title>
+  <link rel="stylesheet" href="./lib/slick/css/slick-theme.css">
+  <link rel="stylesheet" href="./lib/slick/css/slick.css">
+  <link rel="stylesheet" href="./lib/venobox/venobox.css">
+</head>
+
+<body>
+  <div class="your-class">
+    <h1>your content2</h1>
+    <h1>your content3</h1>
+    <h1>your content4</h1>
+    <h1>your content</h1>
+    <h1>your content</h1>
+    <h1>your content</h1>
+  </div>
+  <div class="number__class">
+    <h1>1</h1>
+    <h1>2</h1>
+    <h1>3</h1>
+    <h1>4</h1>
+    <h1>5</h1>
+    <h1>6</h1>
+  </div>
+  <!-- <div style="background: black;" class="bg">
+    <img src="./image/slide-3.png" alt="">
+  </div> -->
+  <div>
+    <a class="venobox" href="image01-big.jpg"><img src="image01-small.jpg" alt="image alt"/></a>
+    <a class="venobox_custom" data-vbtype="iframe" href="http://example.com/">open iFrame</a>
+    <a class="venobox" data-vbtype="video" href="https://youtu.be/d85gkOXeXG4">YouYbe</a>
+    <a class="venobox" data-vbtype="iframe" href="https://www.veno.es">Open Iframe</a>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+  <script src="./lib/venobox/venobox.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.venobox').venobox();
+    });
+    $('.venobox').venobox();
+    $("#firstlink").venobox().trigger('click');
+    $('.venobox_custom').venobox({
+      framewidth: '400px',                            // default: ''
+      frameheight: '300px',                            // default: ''
+      border: '10px',                             // default: '0'
+      bgcolor: '#5dff5e',                          // default: '#fff'
+      titleattr: 'data-title',                       // default: 'title'
+      numeratio: true,                               // default: false
+      infinigall: true,                               // default: false
+      share: ['facebook', 'twitter', 'download'] // default: []
+    });
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"
+    integrity="sha512-3fMsI1vtU2e/tVxZORSEeuMhXnT9By80xlmXlsOku7hNwZSHJjwcOBpmy+uu+fyWwGCLkMvdVbHkeoXdAzBv+w=="
+    crossorigin="anonymous"></script>
+  <script src="./lib/slick/js/slick.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('.your-class').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: '.number__class'
+      });
+      $('.number__class').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        asNavFor: '.your-class',
+        dots: true,
+        centerMode: true,
+        focusOnSelect: true,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 1,
+              infinite: true,
+              dots: true
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+        ]
+
+      });
+    });
+  </script>
+</body>
+
+</html>
